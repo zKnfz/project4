@@ -47,7 +47,11 @@ int divide_and_conquer(int val, int* coins, int n, int* table) {
     }
   }
 
-  table[val] = (min == INT_MAX) ? -1 : min;
+  if (min == INT_MAX) {
+    table[val] = -1;
+  } else {
+    table[val] = min;
+  }
   return table[val];
 }
 
